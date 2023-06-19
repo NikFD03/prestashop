@@ -2,7 +2,7 @@ apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
   name: "prestashop"
-  #namespace: "prestashop"
+  namespace: "prestashop"
   labels:
     app: "prestashop"
 spec:
