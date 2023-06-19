@@ -6,7 +6,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: manual
+  storageClassName: hostpath
   capacity:
     storage: 10Gi
   accessModes:
@@ -20,7 +20,7 @@ metadata:
   name: mysql-pv-claim
   namespace: flux-system
 spec:
-  storageClassName: manual
+  storageClassName: hostpath
   accessModes:
     - ReadWriteOnce
   resources:
