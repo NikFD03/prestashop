@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mysql-configmap
+  Namespace: default
 data:
   MYSQL_HOST: mysql
   MYSQL_USER: "testdb"
