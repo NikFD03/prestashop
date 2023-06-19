@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mysql-configmap
-  namespace: default
+  namespace: flux-system
 data:
   MYSQL_HOST: mysql
   MYSQL_USER: "testdb"
