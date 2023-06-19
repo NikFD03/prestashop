@@ -1,0 +1,29 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "prestashop"
+  #namespace: "prestashop"
+  labels:
+    app: "prestashop"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "prestashop"
+  template:
+    metadata:
+      labels:
+        app: "prestashop"
+    spec:
+      containers:
+      - name: "prestashop"
+        image: "prestashop/prestashop:1.7"
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        envFrom:
+        - configMapRef:
+            name: mysql-configmap 
